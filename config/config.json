@@ -33,42 +33,42 @@
         },
         "display_durations": {
             "clock": 15,
-            "weather": 30,
-            "stocks": 30,
-            "hourly_forecast": 30,
-            "daily_forecast": 30,
+            "weather": 15,
+            "stocks": 15,
+            "hourly_forecast": 15,
+            "daily_forecast": 15,
             "stock_news": 20,
             "odds_ticker": 60,
-            "nhl_live": 30,
-            "nhl_recent": 30,
-            "nhl_upcoming": 30,
-            "nba_live": 30,
-            "nba_recent": 30,
-            "nba_upcoming": 30,
-            "nfl_live": 30,
-            "nfl_recent": 30,
-            "nfl_upcoming": 30,
-            "ncaa_fb_live": 30,
-            "ncaa_fb_recent": 30,
-            "ncaa_fb_upcoming": 30,
-            "ncaa_baseball_live": 30,
-            "ncaa_baseball_recent": 30,
-            "ncaa_baseball_upcoming": 30,
-            "calendar": 30,
-            "youtube": 30,
-            "mlb_live": 30,
-            "mlb_recent": 30,
-            "mlb_upcoming": 30,
-            "milb_live": 30,
-            "milb_recent": 30,
-            "milb_upcoming": 30,
+            "nhl_live": 15,
+            "nhl_recent": 15,
+            "nhl_upcoming": 15,
+            "nba_live": 15,
+            "nba_recent": 15,
+            "nba_upcoming": 15,
+            "nfl_live": 15,
+            "nfl_recent": 15,
+            "nfl_upcoming": 15,
+            "ncaa_fb_live": 15,
+            "ncaa_fb_recent": 15,
+            "ncaa_fb_upcoming": 15,
+            "ncaa_baseball_live": 15,
+            "ncaa_baseball_recent": 15,
+            "ncaa_baseball_upcoming": 15,
+            "calendar": 15,
+            "youtube": 15,
+            "mlb_live": 15,
+            "mlb_recent": 15,
+            "mlb_upcoming": 15,
+            "milb_live": 15,
+            "milb_recent": 15,
+            "milb_upcoming": 15,
             "text_display": 10,
-            "soccer_live": 30,
-            "soccer_recent": 30,
-            "soccer_upcoming": 30,
-            "ncaam_basketball_live": 30,
-            "ncaam_basketball_recent": 30,
-            "ncaam_basketball_upcoming": 30,
+            "soccer_live": 15,
+            "soccer_recent": 15,
+            "soccer_upcoming": 15,
+            "ncaam_basketball_live": 15,
+            "ncaam_basketball_recent": 15,
+            "ncaam_basketball_upcoming": 15,
             "music": 30,
             "of_the_day": 40,
             "news_manager": 60
@@ -129,7 +129,7 @@
         "duration_buffer": 0.1
     },
     "odds_ticker": {
-        "enabled": true,
+        "enabled": false,
         "show_favorite_teams_only": true,
         "games_per_favorite_team": 1,
         "max_games_per_league": 5,
@@ -202,7 +202,7 @@
         "upcoming_games_to_show": 1,
         "show_favorite_teams_only": true,
         "favorite_teams": [
-            "DAL"
+            "SAS"
         ],
         "logo_dir": "assets/sports/nba_logos",
         "show_records": true,
@@ -226,8 +226,7 @@
         "upcoming_games_to_show": 1,
         "show_favorite_teams_only": true,
         "favorite_teams": [
-            "TB",
-            "DAL"
+            "HOU"
         ],
         "logo_dir": "assets/sports/nfl_logos",
         "show_records": true,
@@ -238,7 +237,7 @@
         }
     },
     "ncaa_fb_scoreboard": {
-        "enabled": false,
+        "enabled": true,
         "live_priority": true,
         "live_game_duration": 20,
         "show_odds": true,
@@ -252,8 +251,7 @@
         "upcoming_games_to_show": 1,
         "show_favorite_teams_only": true,
         "favorite_teams": [
-            "UGA",
-            "AUB"
+            "TEX"
         ],
         "logo_dir": "assets/sports/ncaa_fbs_logos",
         "show_records": true,
@@ -277,8 +275,7 @@
         "upcoming_games_to_show": 1,
         "show_favorite_teams_only": true,
         "favorite_teams": [
-            "UGA",
-            "AUB"
+            "TEX"
         ],
         "logo_dir": "assets/sports/ncaa_fbs_logos",
         "show_records": true,
@@ -300,8 +297,7 @@
         "upcoming_games_to_show": 1,
         "show_favorite_teams_only": true,
         "favorite_teams": [
-            "UGA",
-            "AUB"
+            "TEX"
         ],
         "logo_dir": "assets/sports/ncaa_fbs_logos",
         "show_records": true,
@@ -331,8 +327,7 @@
         "upcoming_games_to_show": 1,
         "show_favorite_teams_only": true,
         "favorite_teams": [
-            "TB",
-            "TEX"
+            "HOU"
         ],
         "logo_dir": "assets/sports/mlb_logos",
         "show_records": true,
@@ -354,7 +349,7 @@
         "recent_games_to_show": 1,
         "upcoming_games_to_show": 1,
         "favorite_teams": [
-            "TAM"
+            "HOU"
         ],
         "logo_dir": "assets/sports/milb_logos",
         "show_records": true,
@@ -398,7 +393,7 @@
         "upcoming_games_to_show": 1,
         "show_favorite_teams_only": true,
         "favorite_teams": [
-            "DAL"
+            "austin"
         ],
         "leagues": [
             "usa.1"
