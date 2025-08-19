@@ -7,7 +7,7 @@
     },
     "timezone": "America/Chicago",
     "location": {
-        "city": "Dallas",
+        "city": "Austin",
         "state": "Texas",
         "country": "US"
     },
@@ -139,7 +139,7 @@
             "nfl",
             "mlb",
             "ncaa_fb",
-            "milb"
+            "nba"
         ],
         "update_interval": 3600,
         "scroll_speed": 1,
@@ -176,7 +176,7 @@
         "upcoming_games_to_show": 1,
         "show_favorite_teams_only": true,
         "favorite_teams": [
-            "TB"
+            "SEA"
         ],
         "logo_dir": "assets/sports/nhl_logos",
         "show_records": true,
@@ -190,7 +190,7 @@
         "enabled": false,
         "live_priority": true,
         "live_game_duration": 20,
-        "show_odds": true,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
@@ -202,7 +202,7 @@
         "upcoming_games_to_show": 1,
         "show_favorite_teams_only": true,
         "favorite_teams": [
-            "SAS"
+            "SA"
         ],
         "logo_dir": "assets/sports/nba_logos",
         "show_records": true,
@@ -216,7 +216,7 @@
         "enabled": true,
         "live_priority": true,
         "live_game_duration": 30,
-        "show_odds": true,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
@@ -240,7 +240,7 @@
         "enabled": true,
         "live_priority": true,
         "live_game_duration": 20,
-        "show_odds": true,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
@@ -265,7 +265,7 @@
         "enabled": false,
         "live_priority": true,
         "live_game_duration": 30,
-        "show_odds": true,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
@@ -289,7 +289,7 @@
         "enabled": false,
         "live_priority": true,
         "live_game_duration": 20,
-        "show_odds": true,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
@@ -315,7 +315,7 @@
         "enabled": true,
         "live_priority": false,
         "live_game_duration": 30,
-        "show_odds": true,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
@@ -349,7 +349,7 @@
         "recent_games_to_show": 1,
         "upcoming_games_to_show": 1,
         "favorite_teams": [
-            "HOU"
+            "TAM"
         ],
         "logo_dir": "assets/sports/milb_logos",
         "show_records": true,
@@ -383,7 +383,7 @@
         "enabled": false,
         "live_priority": true,
         "live_game_duration": 30,
-        "show_odds": true,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
