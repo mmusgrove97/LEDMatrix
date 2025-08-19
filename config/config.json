@@ -187,7 +187,7 @@
         }
     },
     "nba_scoreboard": {
-        "enabled": false,
+        "enabled": true,
         "live_priority": true,
         "live_game_duration": 20,
         "show_odds": true,
@@ -213,7 +213,7 @@
         }
     },
     "nfl_scoreboard": {
-        "enabled": false,
+        "enabled": true,
         "live_priority": true,
         "live_game_duration": 30,
         "show_odds": true,
@@ -286,7 +286,7 @@
         }
     },
     "ncaam_basketball_scoreboard": {
-        "enabled": false,
+        "enabled": true,
         "live_priority": true,
         "live_game_duration": 20,
         "show_odds": true,
@@ -312,7 +312,7 @@
         "update_interval": 3600
     },
     "mlb": {
-        "enabled": false,
+        "enabled": true,
         "live_priority": false,
         "live_game_duration": 30,
         "show_odds": true,
