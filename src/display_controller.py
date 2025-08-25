@@ -1188,7 +1188,7 @@ class DisplayController:
                         # Call the appropriate display method based on mode/manager type
                         # Note: Some managers have different display methods or handle clearing internally
                         if self.current_display_mode == 'clock':
-                            manager_to_display.display_time(force_clear=self.force_clear)
+                            manager_to_display.display_time_text(force_clear=self.force_clear)
                         elif self.current_display_mode == 'weather_current':
                             manager_to_display.display_weather(force_clear=self.force_clear)
                         elif self.current_display_mode == 'weather_hourly':

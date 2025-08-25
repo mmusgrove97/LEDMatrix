@@ -143,6 +143,10 @@ class Clock:
             self.last_time = time_str
             self.last_date = date_str
 
+    def display_time_enhanced(self, force_clear: bool = False) -> None:
+        """Display the current time and date."""
+        time_str, ampm, weekday, date_str = self.get_current_time()
+
 if __name__ == "__main__":
     clock = Clock()
     try:
