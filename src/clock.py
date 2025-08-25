@@ -15,6 +15,10 @@ class Clock:
     def __init__(self, display_manager: DisplayManager = None):
         self.config_manager = ConfigManager()
         self.config = self.config_manager.load_config()
+
+        self.display_width = 128
+        self.display_height = 32
+
         # Use the provided display_manager or create a new one if none provided
         self.display_manager = display_manager or DisplayManager(self.config.get('display', {}))
         logger.info("Clock initialized with display_manager: %s", id(self.display_manager))
