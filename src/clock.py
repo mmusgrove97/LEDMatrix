@@ -16,6 +16,7 @@ class Clock:
         self.config_manager = ConfigManager()
         self.config = self.config_manager.load_config()
 
+        self.clock_dir = "../assets/clock"
         self.display_width = 128
         self.display_height = 32
 
@@ -189,7 +190,7 @@ class Clock:
         if digit_str in self._digit_cache:
             return self._digit_cache[digit_str]
 
-        digit_path = os.path.join(self.logo_dir, f"{digit_str}")
+        digit_path = os.path.join(self.clock_dir, f"{digit_str}")
 
         print(f"Digit Path: {digit_path}")
 
