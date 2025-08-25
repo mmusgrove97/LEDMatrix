@@ -216,7 +216,7 @@ class OnDemandRunner:
         if mode == 'clock':
             mgr = Clock(display_manager)
             self._force_enable(mgr)
-            return mgr, lambda fc=False: mgr.display_time_text(force_clear=fc), None, 1.0
+            return mgr, lambda fc=False: mgr.display_time_enhanced(force_clear=fc), None, 1.0
         if mode == 'weather_current':
             mgr = WeatherManager(cfg, display_manager)
             self._force_enable(mgr)
