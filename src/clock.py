@@ -26,8 +26,27 @@ class Clock:
         self.COLORS = {
             'time': (255, 255, 255),    # Pure white for time
             'ampm': (255, 255, 128),    # Bright warm yellow for AM/PM
-            'date': (255, 128, 64)      # Bright orange for date
+            'date': (255, 100, 0)      # Bright orange for date
         }
+
+        self.NUMBER_IMAGES = [
+            "digit0.png",
+            "digit1.png",
+            "digit2.png",
+            "digit3.png",
+            "digit4.png",
+            "digit5.png",
+            "digit6.png",
+            "digit7.png",
+            "digit8.png",
+            "digit9.png",
+            "digit10s.png"
+        ]
+
+        self.BLANK_NUMS = [
+            "blank1s",
+            "blank10s"
+        ]
 
     def _get_timezone(self) -> pytz.timezone:
         """Get timezone from the config file."""
@@ -56,9 +75,7 @@ class Clock:
         current = datetime.now(self.timezone)
         
         # Format time in 12-hour format with AM/PM
-        time_str = current.strftime('%I:%M')  # Remove leading zero from hour
-        if time_str.startswith('0'):
-            time_str = time_str[1:]
+        time_str = current.strftime('%-I:%M') 
         
         # Get AM/PM
         ampm = current.strftime('%p')
@@ -67,11 +84,11 @@ class Clock:
         day_suffix = self._get_ordinal_suffix(current.day)
         # Full weekday on first line, full month and day on second line
         weekday = current.strftime('%A')
-        date_str = current.strftime(f'%B %-d{day_suffix}')
+        date_str = current.strftime(f'%b %-d{day_suffix}')
         
         return time_str, ampm, weekday, date_str
 
-    def display_time(self, force_clear: bool = False) -> None:
+    def display_time_text(self, force_clear: bool = False) -> None:
         """Display the current time and date."""
         time_str, ampm, weekday, date_str = self.get_current_time()
         
@@ -130,7 +147,7 @@ if __name__ == "__main__":
     clock = Clock()
     try:
         while True:
-            clock.display_time()
+            clock.display_time_text()
             time.sleep(clock.clock_config.get('update_interval', 1))
     except KeyboardInterrupt:
         print("\nClock stopped by user")
