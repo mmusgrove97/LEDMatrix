@@ -176,8 +176,8 @@ class Clock:
 
     def time_str_to_decimal(self, time_str) -> tuple:
         fields = time_str.split(":")
-        hour = fields[0] if len(fields) > 0 else 0
-        minute = fields[1] if len(fields) > 1 else 0
+        hour = int(fields[0]) if len(fields) > 0 else 0
+        minute = int(fields[1]) if len(fields) > 1 else 0
 
         # return 10s and 1s place for hours and minutes
         hour_tens = hour // 10
