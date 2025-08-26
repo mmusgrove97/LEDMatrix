@@ -58,7 +58,6 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/python3 ${PROJECT_ROOT_DIR}/start_web_conditionally.py
-ExecStart=/usr/bin/python3 ${PROJECT_ROOT_DIR}/run.py
 WorkingDirectory=${PROJECT_ROOT_DIR}
 StandardOutput=journal
 StandardError=journal
