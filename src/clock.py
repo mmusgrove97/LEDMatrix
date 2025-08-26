@@ -60,7 +60,7 @@ class Clock:
 
         # have one easy reference for offsets, width of each digit picture is static
         self.X_OFFSET_TIME = 1
-        self.Y_OFFSET_TIME = 5
+        self.Y_OFFSET_TIME = 0
         self.X_OFFSET_TEN_HR = 8 
         self.X_OFFSET_FULL_DIGITS = 25
         self.X_OFFSET_DECIMAL_SEPARATOR = 14
@@ -270,17 +270,29 @@ class Clock:
             self.display_manager.update_display()
 
             # Update digit image if necessary
-            if hour_tens_updated and old_hour_tens > 0:
+            if hour_tens_updated and new_hour_tens > 0:
                 hour_tens = self._load_clock_image(self.NUMBER_IMAGES[10])
                 main_img.paste(hour_tens, (self.HOUR_TENS_X, self.HOUR_TENS_Y), hour_tens)
+
             if hour_ones_updated:
                 hour_ones = self._load_clock_image(self.NUMBER_IMAGES[new_hour_ones])
                 main_img.paste(hour_ones, (self.HOUR_ONES_X, self.HOUR_ONES_Y), hour_ones)
+            else:
+                hour_ones = self._load_clock_image(self.NUMBER_IMAGES[old_hour_ones])
+                main_img.paste(hour_ones, (self.HOUR_ONES_X, self.HOUR_ONES_Y), hour_ones)
+
             if minute_tens_updated:
                 minute_tens = self._load_clock_image(self.NUMBER_IMAGES[new_minute_tens])
                 main_img.paste(minute_tens, (self.MINUTE_TENS_X, self.MINUTE_TENS_Y), minute_tens)
+            else:
+                minute_tens = self._load_clock_image(self.NUMBER_IMAGES[old_minute_tens])
+                main_img.paste(minute_tens, (self.MINUTE_TENS_X, self.MINUTE_TENS_Y), minute_tens) 
+
             if minute_ones_updated:
                 minute_ones = self._load_clock_image(self.NUMBER_IMAGES[new_minute_ones])
+                main_img.paste(minute_ones, (self.MINUTE_ONES_X, self.MINUTE_ONES_Y), minute_ones)
+            else:
+                minute_ones = self._load_clock_image(self.NUMBER_IMAGES[old_minute_ones])
                 main_img.paste(minute_ones, (self.MINUTE_ONES_X, self.MINUTE_ONES_Y), minute_ones)
 
             main_img = main_img.convert('RGB') # Convert for display
