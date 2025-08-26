@@ -175,6 +175,9 @@ class Clock:
             self.last_date = date_str
 
     def time_str_to_decimal(self, time_str) -> tuple:
+        if time_str is None:
+            return -1, -1, -1, -1 # return default value if initial time check
+
         fields = time_str.split(":")
         hour = int(fields[0]) if len(fields) > 0 else 0
         minute = int(fields[1]) if len(fields) > 1 else 0
@@ -234,7 +237,7 @@ class Clock:
 
             # Break down time_str into hours and minutes to get correct images
             new_hour_tens, new_hour_ones, new_minute_tens, new_minute_ones = self.time_str_to_decimal(time_str)
-            print(f"\nCurrent Time: {time_str}, Hour: {new_hour_tens + new_hour_ones}, Minute: {new_minute_tens + new_minute_ones}")
+            print(f"\nCurrent Time: {time_str}, Hour: {new_hour_tens*10 + new_hour_ones}, Minute: {new_minute_tens*10 + new_minute_ones}")
 
             # Break down last_time into hours and minutes to see what needs to be updated
             old_hour_tens, old_hour_ones, old_minute_tens, old_minute_ones = self.time_str_to_decimal(self.last_time)
