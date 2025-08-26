@@ -234,7 +234,7 @@ class Clock:
 
             # Break down time_str into hours and minutes to get correct images
             new_hour_tens, new_hour_ones, new_minute_tens, new_minute_ones = self.time_str_to_decimal(time_str)
-            print(f"\nCurrent Time: {time_str}, Hour: {hour_tens + hour_ones}, Minute: {minute_tens + minute_ones}")
+            print(f"\nCurrent Time: {time_str}, Hour: {new_hour_tens + new_hour_ones}, Minute: {new_minute_tens + new_minute_ones}")
 
             # Break down last_time into hours and minutes to see what needs to be updated
             old_hour_tens, old_hour_ones, old_minute_tens, old_minute_ones = self.time_str_to_decimal(self.last_time)
