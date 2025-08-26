@@ -273,7 +273,10 @@ class Clock:
             if hour_tens_updated and new_hour_tens > 0:
                 hour_tens = self._load_clock_image(self.NUMBER_IMAGES[10])
                 main_img.paste(hour_tens, (self.HOUR_TENS_X, self.HOUR_TENS_Y), hour_tens)
-
+            elif new_hour_tens > 0:
+                hour_tens = self._load_clock_image(self.NUMBER_IMAGES[10])
+                main_img.paste(hour_tens, (self.HOUR_TENS_X, self.HOUR_TENS_Y), hour_tens)      
+          
             if hour_ones_updated:
                 hour_ones = self._load_clock_image(self.NUMBER_IMAGES[new_hour_ones])
                 main_img.paste(hour_ones, (self.HOUR_ONES_X, self.HOUR_ONES_Y), hour_ones)
