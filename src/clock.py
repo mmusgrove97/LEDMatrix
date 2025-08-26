@@ -16,7 +16,7 @@ class Clock:
         self.config_manager = ConfigManager()
         self.config = self.config_manager.load_config()
 
-        self.clock_dir = "../assets/clock"
+        self.clock_dir = "/home/piscreen/LED_Matrix/assets/clock"
         self.display_width = 128
         self.display_height = 32
 
