@@ -60,7 +60,7 @@ class Clock:
 
         # have one easy reference for offsets, width of each digit picture is static
         self.X_OFFSET_TIME = 1
-        self.Y_OFFSET_TIME = 1
+        self.Y_OFFSET_TIME = 5
         self.X_OFFSET_TEN_HR = 5
         self.X_OFFSET_FULL_DIGITS = 16
         self.X_OFFSET_DECIMAL_SEPARATOR = 6
@@ -68,13 +68,13 @@ class Clock:
         # set up slots for each digit picture to be displayed in
         self.HOUR_TENS_X = self.X_OFFSET_TIME
         self.HOUR_TENS_Y = self.Y_OFFSET_TIME
-        self.HOUR_ONES_X = self.HOUR_TENS_X + self.X_OFFSET_TEN_HR
+        self.HOUR_ONES_X = self.HOUR_TENS_X + self.X_OFFSET_TEN_HR + 1
         self.HOUR_ONES_Y = self.Y_OFFSET_TIME
         self.TIME_SEPARATOR_X = self.HOUR_ONES_X + self.X_OFFSET_FULL_DIGITS
         self.TIME_SEPARATOR_Y = self.Y_OFFSET_TIME
         self.MINUTE_TENS_X = self.TIME_SEPARATOR_X + self.X_OFFSET_DECIMAL_SEPARATOR
         self.MINUTE_TENS_Y = self.Y_OFFSET_TIME
-        self.MINUTE_ONES_X = self.MINUTE_TENS_X + self.X_OFFSET_FULL_DIGITS
+        self.MINUTE_ONES_X = self.MINUTE_TENS_X + self.X_OFFSET_FULL_DIGITS + 1
         self.MINUTE_ONES_Y = self.Y_OFFSET_TIME
         self.AM_PM_X = self.MINUTE_ONES_X + self.X_OFFSET_FULL_DIGITS
         self.AM_PM_Y = self.Y_OFFSET_TIME
