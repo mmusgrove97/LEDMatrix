@@ -307,7 +307,7 @@ class Clock:
                         # Draw weekday on first line (small font)
             self.display_manager.draw_text(
                 weekday,
-                x = self.DATE_X
+                x = self.DATE_X,
                 y = display_height - 18,  # First line of date
                 color=self.COLORS['date'],
                 small_font=True
@@ -316,8 +316,8 @@ class Clock:
             # Draw month and day on second line (small font)
             self.display_manager.draw_text(
                 date_str,
-                x = self.WEEKDAY_X
-                y = self.  # Second line of date
+                x = self.WEEKDAY_X,
+                y = self.WEEKDAY_Y,  # Second line of date
                 color=self.COLORS['date'],
                 small_font=True
             )
