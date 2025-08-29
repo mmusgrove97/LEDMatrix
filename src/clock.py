@@ -224,7 +224,7 @@ class Clock:
 
     def display_time_enhanced(self, force_clear: bool = False) -> None:
         """Display the current time and date."""
-        time_str, ampm, weekday, date_str = self.get_current_time()
+        time_str, ampm, weekday, month_str, date_str = self.get_current_time()
 
         # Only update if something has changed
         if time_str != self.last_time or date_str != self.last_date or force_clear:
@@ -325,7 +325,7 @@ class Clock:
 
             # Draw month on second line (small font)
             self.display_manager.draw_text(
-                date_str,
+                month_str,
                 x = self.MONTH_X,
                 y = self.MONTH_Y,  # Second line of date
                 color=self.COLORS['date'],
