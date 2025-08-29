@@ -59,7 +59,7 @@ class Clock:
         ]
 
         # have one easy reference for offsets, width of each digit picture is static
-        self.X_OFFSET_TIME = 1
+        self.X_OFFSET_TIME = 5
         self.Y_OFFSET_TIME = 4
         self.X_OFFSET_TEN_HR = 5
         self.X_OFFSET_FULL_DIGITS = 16
@@ -80,7 +80,7 @@ class Clock:
         self.MINUTE_ONES_Y = self.Y_OFFSET_TIME
         self.AM_PM_X = self.MINUTE_ONES_X + self.X_OFFSET_FULL_DIGITS + 2
         self.AM_PM_Y = self.Y_OFFSET_TIME
-        self.DATE_X = self.AM_PM_X + self.X_OFFSET_AMPM + 2
+        self.DATE_X = self.AM_PM_X + self.X_OFFSET_AMPM + 6
         self.DATE_Y = self.Y_OFFSET_TIME
         self.MONTH_X = self.DATE_X
         self.MONTH_Y = self.DATE_Y + self.Y_OFFSET_DATE + 2
