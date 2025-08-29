@@ -64,6 +64,8 @@ class Clock:
         self.X_OFFSET_TEN_HR = 5
         self.X_OFFSET_FULL_DIGITS = 16
         self.X_OFFSET_DECIMAL_SEPARATOR = 6
+        self.X_OFFSET_AMPM = 24
+        self.Y_OFFSET_DATE = 6
 
         # set up slots for each digit picture to be displayed in
         self.HOUR_TENS_X = self.X_OFFSET_TIME
@@ -76,8 +78,12 @@ class Clock:
         self.MINUTE_TENS_Y = self.Y_OFFSET_TIME
         self.MINUTE_ONES_X = self.MINUTE_TENS_X + self.X_OFFSET_FULL_DIGITS + 1
         self.MINUTE_ONES_Y = self.Y_OFFSET_TIME
-        self.AM_PM_X = self.MINUTE_ONES_X + self.X_OFFSET_FULL_DIGITS
+        self.AM_PM_X = self.MINUTE_ONES_X + self.X_OFFSET_FULL_DIGITS + 2
         self.AM_PM_Y = self.Y_OFFSET_TIME
+        self.DATE_X = self.AM_PM_X + self.X_OFFSET_AMPM
+        self.DATE_Y = self.Y_OFFSET_TIME
+        self.WEEKDAY_X = self.DATE_X
+        self.WEEKDAY_Y = self.Y_OFFSET_TIME + self.Y_OFFSET_DATE
 
     def _get_timezone(self) -> pytz.timezone:
         """Get timezone from the config file."""
@@ -297,6 +303,24 @@ class Clock:
             else:
                 minute_ones = self._load_clock_image(self.NUMBER_IMAGES[old_minute_ones])
                 main_img.paste(minute_ones, (self.MINUTE_ONES_X, self.MINUTE_ONES_Y), minute_ones)
+
+                        # Draw weekday on first line (small font)
+            self.display_manager.draw_text(
+                weekday,
+                x = self.DATE_X
+                y = display_height - 18,  # First line of date
+                color=self.COLORS['date'],
+                small_font=True
+            )
+            
+            # Draw month and day on second line (small font)
+            self.display_manager.draw_text(
+                date_str,
+                x = self.WEEKDAY_X
+                y = self.  # Second line of date
+                color=self.COLORS['date'],
+                small_font=True
+            )
 
             main_img = main_img.convert('RGB') # Convert for display
             
