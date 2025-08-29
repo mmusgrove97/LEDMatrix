@@ -305,6 +305,11 @@ class Clock:
                 minute_ones = self._load_clock_image(self.NUMBER_IMAGES[old_minute_ones])
                 main_img.paste(minute_ones, (self.MINUTE_ONES_X, self.MINUTE_ONES_Y), minute_ones)
 
+            main_img = main_img.convert('RGB') # Convert for display
+            
+            # Update image to clear any updated compontents
+            self.display_manager.image.paste(main_img, (0, 0))
+
                         # Draw weekday on first line (small font)
             self.display_manager.draw_text(
                 weekday,
@@ -323,10 +328,6 @@ class Clock:
                 small_font=True
             )
 
-            main_img = main_img.convert('RGB') # Convert for display
-            
-            # Update image to clear any updated compontents
-            self.display_manager.image.paste(main_img, (0, 0))
             self.display_manager.update_display()
 
             # Update cache
