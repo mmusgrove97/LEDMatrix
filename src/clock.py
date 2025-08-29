@@ -80,10 +80,12 @@ class Clock:
         self.MINUTE_ONES_Y = self.Y_OFFSET_TIME
         self.AM_PM_X = self.MINUTE_ONES_X + self.X_OFFSET_FULL_DIGITS + 2
         self.AM_PM_Y = self.Y_OFFSET_TIME
-        self.DATE_X = self.AM_PM_X + self.X_OFFSET_AMPM
+        self.DATE_X = self.AM_PM_X + self.X_OFFSET_AMPM + 2
         self.DATE_Y = self.Y_OFFSET_TIME
-        self.WEEKDAY_X = self.DATE_X
-        self.WEEKDAY_Y = self.Y_OFFSET_TIME + self.Y_OFFSET_DATE
+        self.MONTH_X = self.DATE_X
+        self.MONTH_Y = self.DATE_Y + self.Y_OFFSET_DATE + 2
+        self.WEEKDAY_X = self.DATE_X + 5
+        self.WEEKDAY_Y = self.MONTH_Y + self.Y_OFFSET_DATE + 2
 
     def _get_timezone(self) -> pytz.timezone:
         """Get timezone from the config file."""
@@ -120,14 +122,15 @@ class Clock:
         # # Format date with ordinal suffix - split into two lines
         # day_suffix = self._get_ordinal_suffix(current.day)
         # Full weekday on first line, full month and day on second line
-        weekday = current.strftime('%A')
-        date_str = current.strftime(f'%b %-d')
+        weekday   = current.strftime('%a').upper()
+        month_str = current.strftime(f'%b').upper()
+        date_str  = current.strftime(f"%-d")
         
-        return time_str, ampm, weekday, date_str
+        return time_str, ampm, weekday, month_str, date_str
 
     def display_time_text(self, force_clear: bool = False) -> None:
         """Display the current time and date."""
-        time_str, ampm, weekday, date_str = self.get_current_time()
+        time_str, ampm, weekday, month_str, date_str = self.get_current_time()
         
         # Only update if something has changed
         if time_str != self.last_time or date_str != self.last_date or force_clear:
@@ -164,10 +167,12 @@ class Clock:
                 color=self.COLORS['date'],
                 small_font=True
             )
+
+            full_date_str = f"{month_str} {date_str}"
             
             # Draw month and day on second line (small font)
             self.display_manager.draw_text(
-                date_str,
+                full_date_str,
                 y=display_height - 9,  # Second line of date
                 color=self.COLORS['date'],
                 small_font=True
@@ -225,7 +230,6 @@ class Clock:
         if time_str != self.last_time or date_str != self.last_date or force_clear:
             main_img = Image.new('RGBA', (self.display_width, self.display_height), (0, 0, 0, 255))
             overlay = Image.new('RGBA', (self.display_width, self.display_height), (0, 0, 0, 0))
-            draw_overlay = ImageDraw.Draw(overlay) # Draw text elements on overlay first
 
             time_separator = self._load_clock_image("timeseparator.png")
             overlay.paste(time_separator, (self.TIME_SEPARATOR_X, self.TIME_SEPARATOR_Y), time_separator)
@@ -318,12 +322,21 @@ class Clock:
                 color=self.COLORS['date'],
                 small_font=True
             )
+
+            # Draw month on second line (small font)
+            self.display_manager.draw_text(
+                date_str,
+                x = self.MONTH_X,
+                y = self.MONTH_Y,  # Second line of date
+                color=self.COLORS['date'],
+                small_font=True
+            )
             
-            # Draw month and day on second line (small font)
+            # Draw day on third line (small font)
             self.display_manager.draw_text(
                 date_str,
                 x = self.WEEKDAY_X,
-                y = self.WEEKDAY_Y,  # Second line of date
+                y = self.WEEKDAY_Y,  # third line of date
                 color=self.COLORS['date'],
                 small_font=True
             )
