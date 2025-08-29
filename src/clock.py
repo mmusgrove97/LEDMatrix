@@ -60,7 +60,7 @@ class Clock:
 
         # have one easy reference for offsets, width of each digit picture is static
         self.X_OFFSET_TIME = 1
-        self.Y_OFFSET_TIME = 5
+        self.Y_OFFSET_TIME = 4
         self.X_OFFSET_TEN_HR = 5
         self.X_OFFSET_FULL_DIGITS = 16
         self.X_OFFSET_DECIMAL_SEPARATOR = 6
@@ -225,6 +225,7 @@ class Clock:
         if time_str != self.last_time or date_str != self.last_date or force_clear:
             main_img = Image.new('RGBA', (self.display_width, self.display_height), (0, 0, 0, 255))
             overlay = Image.new('RGBA', (self.display_width, self.display_height), (0, 0, 0, 0))
+            draw_overlay = ImageDraw.Draw(overlay) # Draw text elements on overlay first
 
             time_separator = self._load_clock_image("timeseparator.png")
             overlay.paste(time_separator, (self.TIME_SEPARATOR_X, self.TIME_SEPARATOR_Y), time_separator)
@@ -308,7 +309,7 @@ class Clock:
             self.display_manager.draw_text(
                 weekday,
                 x = self.DATE_X,
-                y = display_height - 18,  # First line of date
+                y = self.DATE_Y,  # First line of date
                 color=self.COLORS['date'],
                 small_font=True
             )
